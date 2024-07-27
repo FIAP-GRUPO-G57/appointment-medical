@@ -27,8 +27,8 @@ resource "aws_lambda_function" "app" {
   role          = aws_iam_role.lambda_execution.arn
   handler       = "app.lambda_handler"
   runtime       = "python3.12"
-  filename         = "appointment-lambda-function.zip"
-  source_code_hash = filebase64sha256("appointment-lambda-function.zip")
+  filename         = "appointment_lambda_function.zip"
+  source_code_hash = filebase64sha256("appointment_lambda_function.zip")
 
   environment {
     variables = {

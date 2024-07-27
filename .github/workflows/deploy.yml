@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements.txt -t dependencies
 
     - name: Package Lambda function
-      run: zip -r appointment-lambda-function.zip app.py dependencies/*
+      run: zip -r appointment_lambda_function.zip app.py dependencies/*
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
@@ -34,4 +34,4 @@ jobs:
 
       - name: Deploy Lambda function
         run: |
-          aws lambda update-function-code --function-name appointment-lambda-function --zip-file fileb://appointment-lambda-function.zip
+          aws lambda update-function-code --function-name appointment-lambda-function --zip-file fileb://appointment_lambda_function.zip
