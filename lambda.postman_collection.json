@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "eefb67a6-e7b7-46c1-a867-914199c7e260",
+		"name": "lambda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1146942"
+	},
+	"item": [
+		{
+			"name": "appointment",
+			"item": [
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ywrcrw2rp9.execute-api.us-east-1.amazonaws.com/appointments/1234",
+							"protocol": "https",
+							"host": [
+								"ywrcrw2rp9",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"appointments",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post ff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"1234\",\n    \"patient_id\": \"John patient\",\n    \"doctor_id\": \"Doe doctor\",\n    \"appointment_time\": \"2024-08-01T14:00:00Z\",\n    \"sts\": \"pending\",\n    \"reason\": \"Routine check-up\"\n}"
+						},
+						"url": {
+							"raw": "https://gg76jicfl6.execute-api.us-east-1.amazonaws.com/appointments",
+							"protocol": "https",
+							"host": [
+								"gg76jicfl6",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put ff",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"patient_id\": \"John pat\",\n\"doctor_id\": \"Doe doc\",\n\"appointment_time\": \"2024-08-01T14:00:00Z\",\n\"status\": \"pending\",\n\"details\": \"Routine check-up\"\n}"
+						},
+						"url": {
+							"raw": "https://aqw2xlba4m.execute-api.us-east-1.amazonaws.com/appointments/123",
+							"protocol": "https",
+							"host": [
+								"aqw2xlba4m",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"appointments",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ff",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://gg76jicfl6.execute-api.us-east-1.amazonaws.com/appointments/1234",
+							"protocol": "https",
+							"host": [
+								"gg76jicfl6",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"appointments",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://8qtls8wz9l.execute-api.us-east-1.amazonaws.com/prod/files?user=666553",
+							"protocol": "https",
+							"host": [
+								"8qtls8wz9l",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"files"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "666553"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef4a432-7e68-4de0-8728-0b3ca2311385"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://8qtls8wz9l.execute-api.us-east-1.amazonaws.com/prod/upload?user=666553",
+							"protocol": "https",
+							"host": [
+								"8qtls8wz9l",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "666553"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://8qtls8wz9l.execute-api.us-east-1.amazonaws.com/prod/download?user=666553&filename=a31bee9c-2996-447c-9b50-26b9d0add1c5-filee.txt",
+							"protocol": "https",
+							"host": [
+								"8qtls8wz9l",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"prod",
+								"download"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "666553"
+								},
+								{
+									"key": "filename",
+									"value": "a31bee9c-2996-447c-9b50-26b9d0add1c5-filee.txt"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
