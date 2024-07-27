@@ -25,6 +25,7 @@ jobs:
 
     - name: Package Lambda function
       run: zip -r appointment_lambda_function.zip app.py dependencies/*
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
@@ -32,6 +33,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy Lambda function
-        run: |
-          aws lambda update-function-code --function-name appointment-lambda-function --zip-file fileb://appointment_lambda_function.zip
+    - name: Deploy Lambda function
+      run: |
+        aws lambda update-function-code --function-name appointment-lambda-function --zip-file fileb://appointment_lambda_function.zip
